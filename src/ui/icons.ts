@@ -1,0 +1,23 @@
+const paths: Record<string, string> = {
+  play: '<path d="m9 5 11 7-11 7z"/>', pause: '<path d="M8 5v14M16 5v14"/>',
+  arena: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M12 5v14M3 9h3v6H3m18-6h-3v6h3"/><circle cx="12" cy="12" r="3"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+  sliders: '<path d="M5 3v8m0 4v6m7-18v3m0 4v11m7-18v11m0 4v3M2 11h6m1-5h6m1 8h6"/>',
+  film: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16m10-16v16M3 9h4m-4 6h4m10-6h4m-4 6h4"/>',
+  record: '<circle cx="12" cy="12" r="8"/>', stop: '<rect x="6" y="6" width="12" height="12" rx="2"/>',
+  keyboard: '<rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 15h10"/>',
+  chevron: '<path d="m9 5 7 7-7 7"/>', down: '<path d="m6 9 6 6 6-6"/>', arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
+  reset: '<path d="M3 11a9 9 0 1 1 2 7M3 4v7h7"/>', ball: '<circle cx="12" cy="12" r="9"/><path d="m12 8 4 3-2 5h-4l-2-5zM12 3v5m9 3-5 0m1 8-3-3m-7 3 3-3m-7-5h5"/>',
+  camera: '<path d="M14 4h-4l-2 3H4a2 2 0 0 0-2 2v10h20V9a2 2 0 0 0-2-2h-4z"/><circle cx="12" cy="13" r="4"/>',
+  infinity: '<path d="M12 12c-3-8-10-6-10 0s7 8 10 0 10-6 10 0-7 8-10 0"/>',
+  check: '<path d="m5 12 4 4L19 6"/>', close: '<path d="m6 6 12 12M18 6 6 18"/>',
+  help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .6-1.5 1-1.5 2m0 3h.01"/>',
+  bookmark: '<path d="M6 3h12v18l-6-4-6 4z"/>', step: '<path d="m5 5 10 7-10 7zM19 5v14"/>', back: '<path d="m19 5-10 7 10 7zM5 5v14"/>',
+  download: '<path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/>', upload: '<path d="M12 16V4m-4 4 4-4 4 4M4 16v5h16v-5"/>',
+  trash: '<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/>',
+  volume: '<path d="m11 4-6 5H2v6h3l6 5zM15 8a6 6 0 0 1 0 8m3-12a11 11 0 0 1 0 16"/>',
+  expand: '<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>',
+  bolt: '<path d="m13 2-9 12h7l-1 8 10-12h-7z"/>',
+  lock: '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/>',
+};
+export const icon = (name: string, cls = '') => `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] ?? paths.target}</svg>`;

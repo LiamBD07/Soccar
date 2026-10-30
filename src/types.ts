@@ -1,0 +1,36 @@
+export type Vec = { x: number; y: number; z: number };
+export type Quat = Vec & { w: number };
+export type Input = {
+  throttle: number;
+  steer: number;
+  pitch: number;
+  yaw: number;
+  roll: number;
+  boost: boolean;
+  jump: boolean;
+  powerslide: boolean;
+};
+export const emptyInput = (): Input => ({ throttle: 0, steer: 0, pitch: 0, yaw: 0, roll: 0, boost: false, jump: false, powerslide: false });
+export type BodyState = { position: Vec; rotation: Quat; velocity: Vec; angularVelocity: Vec };
+export type Snapshot = {
+  version: 1;
+  tick: number;
+  car: BodyState;
+  ball: BodyState;
+  flipAvailable: boolean;
+  jumpUsed: boolean;
+  jumpHeld: number;
+  airborneTime: number;
+  flipTimer: number;
+  flipDirection: Vec;
+  wasJump: boolean;
+  resetLatched: boolean;
+  flipFromReset: boolean;
+  resetCount: number;
+  goals: number;
+  input: Input;
+};
+export type Preset = 'kickoff' | 'aerial' | 'reset' | 'wall';
+export type Mode = 'freeplay' | 'trainer' | 'tas';
+export type Replay = { format: 'soccar-take'; version: 1; physicsVersion: string; title: string; createdAt: string; hz: 120; frames: Snapshot[] };
+export type Clip = { id: string; title: string; createdAt: number; duration: number; blob: Blob; mime: string; size: number };
